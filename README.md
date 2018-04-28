@@ -33,12 +33,12 @@ To get started with Bruno I highly recommend my article on
 
 For Laravel 5.3 and below
 ```bash
-composer require optimus/bruno ~2.0
+composer require iphuongtt/bruno ~2.0
 ```
 
 For Laravel 5.4 and above
 ```bash
-composer require optimus/bruno ~3.0
+composer require iphuongtt/bruno ~3.0
 ```
 
 ## Usage
