@@ -1,10 +1,10 @@
 # Bruno
 
-[![Latest Version](https://img.shields.io/github/release/esbenp/bruno.svg?style=flat-square)](https://github.com/esbenp/bruno/releases)
+[![Latest Version](https://img.shields.io/github/release/iphuongtt/bruno.svg?style=flat-square)](https://github.com/esbenp/bruno/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Build Status](https://img.shields.io/travis/esbenp/bruno/master.svg?style=flat-square)](https://travis-ci.org/esbenp/bruno)
-[![Coverage Status](https://img.shields.io/coveralls/esbenp/bruno.svg?style=flat-square)](https://coveralls.io/github/esbenp/bruno)
-[![Total Downloads](https://img.shields.io/packagist/dt/optimus/bruno.svg?style=flat-square)](https://packagist.org/packages/optimus/bruno)
+[![Build Status](https://img.shields.io/travis/iphuongtt/bruno/master.svg?style=flat-square)](https://travis-ci.org/esbenp/bruno)
+[![Coverage Status](https://img.shields.io/coveralls/iphuongtt/bruno.svg?style=flat-square)](https://coveralls.io/github/esbenp/bruno)
+[![Total Downloads](https://img.shields.io/packagist/dt/iphuongtt/bruno.svg?style=flat-square)](https://packagist.org/packages/iphuongtt/bruno)
 
 ## Introduction
 
@@ -63,36 +63,37 @@ Filter_groups | array | Array of filter groups. See below for syntax.
 ### Implementation
 
 ```php
-<?php
 
-namespace App\Http\Controllers;
-
-use Optimus\Api\Controller\EloquentBuilderTrait;
-use Optimus\Api\Controller\LaravelController;
-use App\Models\Book;
-
-class BookController extends LaravelController
-{
-    use EloquentBuilderTrait;
-
-    public function getBooks()
-    {
-        // Parse the resource options given by GET parameters
-        $resourceOptions = $this->parseResourceOptions();
-
-        // Start a new query for books using Eloquent query builder
-        // (This would normally live somewhere else, e.g. in a Repository)
-        $query = Book::query();
-        $this->applyResourceOptions($query, $resourceOptions);
-        $books = $query->get();
-
-        // Parse the data using Optimus\Architect
-        $parsedData = $this->parseData($books, $resourceOptions, 'books');
-
-        // Create JSON response of parsed data
-        return $this->response($parsedData);
-    }
-}
+	<?php
+	
+	namespace App\Http\Controllers;
+	
+	use Iphuongtt\Api\Controller\EloquentBuilderTrait;
+	use Iphuongtt\Api\Controller\LaravelController;
+	use App\Models\Book;
+	
+	class BookController extends LaravelController
+	{
+	    use EloquentBuilderTrait;
+	
+	    public function getBooks()
+	    {
+	        // Parse the resource options given by GET parameters
+	        $resourceOptions = $this->parseResourceOptions();
+	
+	        // Start a new query for books using Eloquent query builder
+	        // (This would normally live somewhere else, e.g. in a Repository)
+	        $query = Book::query();
+	        $this->applyResourceOptions($query, $resourceOptions);
+	        $books = $query->get();
+	
+	        // Parse the data using Optimus\Architect
+	        $parsedData = $this->parseData($books, $resourceOptions, 'books');
+	
+	        // Create JSON response of parsed data
+	        return $this->response($parsedData);
+	    }
+	}
 ```
 
 ## Syntax documentation

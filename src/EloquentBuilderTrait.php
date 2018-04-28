@@ -1,6 +1,6 @@
 <?php
 
-namespace Optimus\Bruno;
+namespace Iphuongtt\Bruno;
 
 use DB;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

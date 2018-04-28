@@ -1,8 +1,8 @@
 {
-    "name": "optimus/bruno",
+    "name": "iphuongtt/bruno",
     "autoload": {
         "psr-4": {
-            "Optimus\\Bruno\\": "src/"
+            "Iphuongtt\\Bruno\\": "src/"
         }
     },
     "require": {
