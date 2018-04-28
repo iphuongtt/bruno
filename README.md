@@ -1,9 +1,9 @@
 # Bruno
 
-[![Latest Version](https://img.shields.io/github/release/iphuongtt/bruno.svg?style=flat-square)](https://github.com/esbenp/bruno/releases)
+[![Latest Version](https://img.shields.io/github/release/iphuongtt/bruno.svg?style=flat-square)](https://github.com/iphuongtt/bruno/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Build Status](https://img.shields.io/travis/iphuongtt/bruno/master.svg?style=flat-square)](https://travis-ci.org/esbenp/bruno)
-[![Coverage Status](https://img.shields.io/coveralls/iphuongtt/bruno.svg?style=flat-square)](https://coveralls.io/github/esbenp/bruno)
+[![Build Status](https://img.shields.io/travis/iphuongtt/bruno/master.svg?style=flat-square)](https://travis-ci.org/iphuongtt/bruno)
+[![Coverage Status](https://img.shields.io/coveralls/iphuongtt/bruno.svg?style=flat-square)](https://coveralls.io/github/iphuongtt/bruno)
 [![Total Downloads](https://img.shields.io/packagist/dt/iphuongtt/bruno.svg?style=flat-square)](https://packagist.org/packages/iphuongtt/bruno)
 
 ## Introduction
@@ -21,8 +21,8 @@ For his ideas and his refusal to renounce them he was burned to the stake in 160
 
 * Parse GET parameters for dynamic eager loading of related resources, sorting and pagination
 * Advanced filtering of resources using filter groups
-* Use [Optimus\Architect](https://github.com/esbenp/architect) for sideloading, id loading or embedded loading of related resources
-* ... [Ideas for new functionality is welcome here](https://github.com/esbenp/bruno/issues/new)
+* Use [Iphuongtt\Architect](https://github.com/iphuongtt/architect) for sideloading, id loading or embedded loading of related resources
+* ... [Ideas for new functionality is welcome here](https://github.com/iphuongtt/bruno/issues/new)
 
 ## Tutorial
 
@@ -87,7 +87,7 @@ Filter_groups | array | Array of filter groups. See below for syntax.
 	        $this->applyResourceOptions($query, $resourceOptions);
 	        $books = $query->get();
 	
-	        // Parse the data using Optimus\Architect
+	        // Parse the data using Iphuongtt\Architect
 	        $parsedData = $this->parseData($books, $resourceOptions, 'books');
 	
 	        // Create JSON response of parsed data
@@ -119,7 +119,7 @@ Will return a collection of `Book`s eager loaded with the ID of their `Author`
 Will return a collection of `Book`s and a eager loaded collection of their
 `Author`s in the root scope.
 
-[See mere about eager loading types in Optimus\Architect's README](https://github.com/esbenp/architect)
+[See mere about eager loading types in Iphuongtt\Architect's README](https://github.com/iphuongtt/architect)
 
 ### Pagination
 
@@ -371,8 +371,8 @@ $ phpunit
 
 ## Contributing
 
-Please see [CONTRIBUTING](https://github.com/esbenp/bruno/blob/master/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](https://github.com/iphuongtt/bruno/blob/master/CONTRIBUTING.md) for details.
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/esbenp/bruno/blob/master/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/iphuongtt/bruno/blob/master/LICENSE) for more information.
