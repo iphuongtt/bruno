@@ -31,7 +31,10 @@ abstract class LaravelController extends Controller
         if ($data instanceof Arrayable && !$data instanceof JsonSerializable) {
             $data = $data->toArray();
         }
-
+        if (isset($data['total_count'])) {
+            $headers['X-Total-Count'] = $data['total_count'];
+            unset($data['total_count']);
+        }
         return new JsonResponse($data, $statusCode, $headers);
     }
 
@@ -44,9 +47,17 @@ abstract class LaravelController extends Controller
      */
     protected function parseData($data, array $options, $key = null)
     {
+        $parsedData = [];
         $architect = new Architect();
-
-        return $architect->parseData($data, $options['modes'], $key);
+        if (isset($data['data'])) {
+            $parsedData = $architect->parseData($data['data'], $options['modes'], $key);
+        } else {
+            $parsedData = $architect->parseData($data, $options['modes'], $key);
+        }
+        if (isset($data['total_count'])) {
+            $parsedData['total_count'] = $data['total_count'];
+        }
+        return $parsedData;
     }
 
     /**
