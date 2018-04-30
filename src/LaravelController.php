@@ -33,6 +33,7 @@ abstract class LaravelController extends Controller
         }
         if (isset($data['total_count'])) {
             $headers['X-Total-Count'] = $data['total_count'];
+            $headers['Access-Control-Expose-Headers'] = 'X-Current-Page, X-Total-Count';
             unset($data['total_count']);
         }
         return new JsonResponse($data, $statusCode, $headers);
