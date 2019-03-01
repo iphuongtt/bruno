@@ -279,9 +279,9 @@ trait EloquentBuilderTrait
             if ($relation instanceof BelongsTo) {
                 $queryBuilder->join(
                     $relation->getRelated()->getTable().' as '.$key,
-                    $relation->getQualifiedForeignKey(),
+                    method_exists($relation, 'getQualifiedForeignKeyName') ? $relation->getQualifiedForeignKeyName() : $relation->getQualifiedForeignKey(),
                     '=',
-                    $key.'.'.$relation->getOwnerKey(),
+                    method_exists($relation, 'getOwnerKeyName') ? $key.'.'.$relation->getOwnerKeyName() : $key.'.'.$relation->getOwnerKey(),
                     $type
                 );
             } elseif ($relation instanceof BelongsToMany) {
